@@ -134,15 +134,9 @@ class Listeners implements Listener {
         }
     }
 
-    // disable join, quit and death messages
     @EventHandler(priority = EventPriority.LOWEST)
     @SuppressWarnings("unused")
     void onPlayerJoin(final PlayerJoinEvent event) {
-        if (protectedWorld(event.getPlayer().getWorld())) {
-            Player player = event.getPlayer();
-            Location spawn = player.getWorld().getSpawnLocation();
-            player.teleport(spawn);
-        }
         event.setJoinMessage(null);
     }
 
